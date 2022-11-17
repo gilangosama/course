@@ -62,6 +62,9 @@
           @apply hover:underline;
         }
         @media screen and (max-width: 1024px) {
+          body{
+            overflow-x: hidden;
+          }
           .menu-toggle{
             display :flex;
           }
@@ -84,15 +87,15 @@
       }
     </style>
   </head>
-  <body>
+  <body class="">
     <!-- Navbar -->
-    <header class="bg-header  z-60">
-      <section class="container mx-auto p-5 font-poppins lg:px-0 max-lg:fixed max-lg:bg-header ">  
-          <nav class="items-center flex items-center justify-between max-lg:bg-header ">
-            <div class="items-center p-0">
+    <header class="bg-header z-60">
+      <section class="container mx-auto p-5 font-poppins  max-lg:fixed max-sm:w-[420px] w-full">  
+          <nav class="items-center flex items-center justify-between max-lg:bg-header">
+            <div class="items-center ">
               <img src="img/logo.svg" alt="logo" />
             </div>
-            <ul class="flex flex-row gap-8 font-normal text-[15px] max-lg:absolute max-lg:top-0 max-lg:-right-1 max-lg:h-[10vh]  max-lg:w-[100%] bg-header max-lg:gap-4 max-lg:shadow-lg">
+            <ul class="flex flex-row gap-8 font-normal text-[15px] max-lg:absolute max-lg:top-0 max-lg:-right-1 max-lg:h-[10vh]  max-lg:w-[100%] bg-header max-lg:gap-2 max-lg:shadow-lg">
               <li>
                 <a href="#"><span class="text-[#FF994F] font-semibold">Home</span></a>
               </li>
@@ -121,12 +124,12 @@
       </section>
 
       <!-- conten Header -->
-      <section class="w-[1300px] mx-auto max-lg:pt-28 ">
-        <div class="container mx-auto flex items-center font-inter justify-between px-10 max-lg:py-10">
-          <div class="w-[700px] max-lg:w-[420px] max-lg:float-left">
-            <h1 class="font-bold text-[65px] text-[#151F3C] max-lg:text-3xl">The Best <span class="text-[#FF994F]">Courses</span> With the Best Mentors</h1>
+      <section class="mx-auto max-lg:pt-28 ">
+        <div class="container mx-auto flex items-center font-inter justify-between px-10 max-sm:py-10 max-sm:px-6">
+          <div class="w-[700px] max-lg:w-[350px] ">
+            <h1 class="font-bold text-[65px] text-[#151F3C] max-sm:text-3xl">The Best <span class="text-[#FF994F]">Courses</span> With the Best Mentors</h1>
             <p class="text-[15px] font-thin py-4 max-sm:text-xs lg:py-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum massa sit amet porta efficitur.</p>
-            <div class="btn-regis py-3 px-6 rounded-full text-[#fff] w-[150px] text-center mt-4 max-lg:py-2 max-lg:px-3 max-lg:w-[120px]">
+            <div class="btn-regis py-3 px-6 rounded-full text-[#fff] w-[150px] text-center mt-4 max-sm:py-2 max-sm:px-3 max-sm:w-[120px]">
               <button class="text-[14px] max-lg:text-xs">Register Now</button>
             </div>
           </div>
@@ -149,7 +152,7 @@
     </header>
 
     <!-- content Find The Course You Want -->
-    <section class="py-32 max-w-[1300px] mx-auto">
+    <section class="py-32 mx-auto">
       <div class="container mx-auto font-inter items-center px-10">
         <div class="flex items-center gap-32 max-lg:grid max-lg:gap-2">
           <h1 class="text-[40px] font-bold text-[#151F3C] w-[360px] max-lg:text-2xl sm:none">Find The Course You Want</h1>
@@ -203,7 +206,7 @@
     </section>
 
     <!-- Content Mentor -->
-    <section class="max-w-[1240px] mx-auto py-10">
+    <section class=" mx-auto py-10">
       <div class="container mx-auto pl-20 font-inter max-lg:pl-0">
         <div class="flex items-center justify-between max-lg:grid gap-6 ">
           <div class="w-[800px] max-lg:w-[300px] mx-auto">
@@ -218,7 +221,7 @@
     </section>
 
     <!-- conten grafik -->
-    <section class="py-28 max-w-[1300px] mx-auto ">
+    <section class="py-28 mx-auto ">
       <div class="container mx-auto font-inter items-center ">
         <div class="flex justify-between items-center mx-auto gap-4">
           <div class="px-10 ">
@@ -264,7 +267,7 @@
 
     <!-- Develop Your Quality -->
     <section>
-      <div class="container mx-auto py-20 px-10 max-w-[1300px]">
+      <div class="container mx-auto py-20 px-10 ">
         <div class="bg-header rounded-3xl py-24 max-lg:py-12">
           <div class="mx-20 w-[450px]">
             <h1 class="text-[#151F3C] font-bold text-[40px] max-lg:text-2xl">Develop Your Quality</h1>
@@ -288,7 +291,7 @@
     <!-- Footer -->
     <footer class="bg-[#281900]">
       <section>
-        <div class="container mx-auto py-28 font-inter max-w-[1300px]">
+        <div class="container mx-auto py-28 font-inter">
           <div class="relative">
             <div class="absolute -top-14 left-10"><img src="img/logo2.svg" alt="" /></div>
           </div>
