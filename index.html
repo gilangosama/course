@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700;800&family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="tailwind.config.js"></script>
+    <title>UTS</title>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        body{
+          overflow-x: hidden;
+        }
+        .btn-login {
+          border: 1px solid #ff994f;
+          font-size: 15px;
+        }
+        .btn-regis {
+          border: 1px solid #ff994f;
+          font-size: 15px;
+          background-color: #ff994f;
+        }
+        .menu-toggle input{
+          position: absolute;
+          width: 39px;
+          height: 28px;
+          opacity: 0;
+          left: -5px;
+          top:-3px;
+          cursor :pointer;
+          z-index: 60;
+        }
+        .menu-toggle span{
+          display: block;
+          width:28px;
+          height: 3px;
+          background-color: #000000;
+          transition: all 0.5s;
+        }
+        .menu-toggle span:nth-child(2){
+          transform-origin: 0 0;
+        }
+
+        .menu-toggle span:nth-child(4){
+          transform-origin: 0 100%;
+        }
+
+        .menu-toggle input:checked ~ span:nth-child(2){
+          transform: rotate(45deg) translate(-1px, -1px);
+        }
+        .menu-toggle input:checked ~ span:nth-child(4){
+          transform: rotate(-45deg) translate(-1px, 0);
+        }
+        .menu-toggle input:checked ~ span:nth-child(3){
+          transform :scale(0);
+        }
+        nav a {
+          @apply hover:underline;
+        }
+        @media screen and (max-width: 1024px) {
+          .menu-toggle{
+            display :flex;
+          }
+          nav ul{
+            position: absolute;
+            right:0;
+            top:0;
+            width: 80%;
+            background-color: #FFFAF2;
+            align-items: center;
+            justify-content: space-evenly;
+            z-index: -1;
+            transform: translateY(0);
+            transition: all 1s;
+          }
+          nav ul.active{
+            transform: translateY(100%);
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="bg-header  z-60">
+      <section class="container mx-auto p-5 font-poppins lg:px-0 max-lg:fixed max-lg:bg-header ">  
+          <nav class="items-center flex items-center justify-between max-lg:bg-header ">
+            <div class="items-center p-0">
+              <img src="img/logo.svg" alt="logo" />
+            </div>
+            <ul class="flex flex-row gap-8 font-normal text-[15px] max-lg:absolute max-lg:top-0 max-lg:-right-1 max-lg:h-[10vh]  max-lg:w-[100%] bg-header max-lg:gap-4 max-lg:shadow-lg">
+              <li>
+                <a href="#"><span class="text-[#FF994F] font-semibold">Home</span></a>
+              </li>
+              <li class="text-[#646464]"><a href="#">Course</a></li>
+              <li class="text-[#646464]"><a href="#">Mentors</a></li>
+              <li class="text-[#646464]"><a href="#">About Us</a></li>
+              <li class="text-[#646464]"><a href="#">Contact</a></li>
+            </ul>
+
+            <div class="flex gap-4 font-semibold text-[12px] items-center max-sm:hidden">
+              <div class="btn-login py-2 px-10 rounded-full text-[#FF994F] max-lg:py-2 max-lg:px-6">
+                <button class="text-[15px] max-lg:text-sm">Log in</button>
+              </div>
+              <div class="btn-regis py-2 px-8 rounded-full text-[#fff] ">
+                <button class="text-[15px]">Registeration</button>
+              </div>
+            </div>
+
+            <div class="menu-toggle hidden flex-col h-[20px] justify-between relative">
+              <input type="checkbox">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </nav>
+      </section>
+
+      <!-- conten Header -->
+      <section class="w-[1300px] mx-auto max-lg:pt-28 ">
+        <div class="container mx-auto flex items-center font-inter justify-between px-10 max-lg:py-10">
+          <div class="w-[700px] max-lg:w-[420px] max-lg:float-left">
+            <h1 class="font-bold text-[65px] text-[#151F3C] max-lg:text-3xl">The Best <span class="text-[#FF994F]">Courses</span> With the Best Mentors</h1>
+            <p class="text-[15px] font-thin py-4 max-sm:text-xs lg:py-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum massa sit amet porta efficitur.</p>
+            <div class="btn-regis py-3 px-6 rounded-full text-[#fff] w-[150px] text-center mt-4 max-lg:py-2 max-lg:px-3 max-lg:w-[120px]">
+              <button class="text-[14px] max-lg:text-xs">Register Now</button>
+            </div>
+          </div>
+          
+          <div class="w-[550px] z-20 max-lg:hidden">
+            <img src="img/1.svg" alt="" />
+          </div>
+          <div class="relative h-32 w-32 max-lg:hidden">
+            <div class="absolute w-[180px] inset-y-14 right-[440px] items-stretch z-1">
+              <img src="img/vektor1.svg" alt="" class="" />
+            </div>
+            <div class="relative h-32 w-32 max-lg:hidden"></div>
+              <div class="absolute w-[180px] -inset-y-56 right-28 z-1">
+                <img src="img/vektor1.svg" alt="" class="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <!-- content Find The Course You Want -->
+    <section class="py-32 max-w-[1300px] mx-auto">
+      <div class="container mx-auto font-inter items-center px-10">
+        <div class="flex items-center gap-32 max-lg:grid max-lg:gap-2">
+          <h1 class="text-[40px] font-bold text-[#151F3C] w-[360px] max-lg:text-2xl sm:none">Find The Course You Want</h1>
+          <p class="text-[#969696] text-[15px] pl-10 max-lg:text-sm max-lg:p-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum massa sit amet porta efficitur.</p>
+        </div>
+        <!-- galeri Find The Course You Want -->
+        <!-- galeri 1 -->
+        <div class="grid grid-cols-3 py-10 items-center max-sm:grid-cols-1 max-sm:grid-rows-3 max-sm:mx-auto max-lg:gap-6 ">
+          <div class="w-[400px] relative">
+            <p class="absolute text-[#FF994F] bg-[#fff] text-[14px] rounded-full py-2 px-4 mx-4 my-4"><span class="font-bold">$25/</span>Course</p>
+
+            <div class="absolute flex bg-[#00000066] text-white font-light rounded-full py-2 px-6 right-14 top-4 items-center gap-1 text-[14px]"><img src="img/Star.svg" alt="" />(2.1k)</div>
+
+            <div class="absolute flex gap-4 items-center text-white top-[160px] left-4 text-[15px] w-[25px]"><img src="img/rapael.svg" alt="" />Raphael</div>
+            <p class="absolute top-44 left-14 text-white text-[14px] font-light">teacher</p>
+            <h2 class="absolute font-bold top-32 left-4 text-white text-[18px]">Basic programming (HTML, CSS)</h2>
+            <img src="img/content.svg" alt="" />
+            <div class="absolute flex gap-2 text-white top-[180px] right-16 pl-64 text-[13px] items-center"><img src="img/play.svg" alt="" />20 video</div>
+          </div>
+
+          <!-- galeri 1 -->
+          <div class="w-[400px] relative">
+            <p class="absolute text-[#FF994F] bg-[#fff] text-[14px] rounded-full py-2 px-4 mx-4 my-4"><span class="font-bold">$25/</span>Course</p>
+
+            <div class="absolute flex bg-[#00000066] text-white font-light rounded-full py-2 px-6 right-14 top-4 items-center gap-1 text-[14px]"><img src="img/Star.svg" alt="" />(3.5k)</div>
+
+            <div class="absolute flex gap-4 items-center text-white top-[160px] left-4 text-[15px] w-[25px]"><img src="img/microna.svg" alt="" />Microna</div>
+            <p class="absolute top-44 left-14 text-white text-[14px] font-light">teacher</p>
+            <h2 class="absolute font-bold top-32 left-4 text-white text-[18px]">Basic programming (HTML, CSS)</h2>
+            <img src="img/content2.svg" alt="" />
+            <div class="absolute flex gap-2 text-white top-[180px] right-16 pl-64 text-[13px] items-center"><img src="img/play.svg" alt="" />20 video</div>
+          </div>
+
+          <!-- galeri 1 -->
+          <div class="w-[400px] relative">
+            <p class="absolute text-[#FF994F] bg-[#fff] text-[14px] rounded-full py-2 px-4 mx-4 my-4"><span class="font-bold">$25/</span>Course</p>
+
+            <div class="absolute flex bg-[#00000066] text-white font-light rounded-full py-2 px-6 right-14 top-4 items-center gap-1 text-[14px]"><img src="img/Star.svg" alt="" />(4k)</div>
+
+            <div class="absolute flex gap-4 items-center text-white top-[160px] left-4 text-[15px] w-[25px]"><img src="img/david.svg" alt="" />Davidun</div>
+            <p class="absolute top-44 left-14 text-white text-[14px] font-light">teacher</p>
+            <h2 class="absolute font-bold top-32 left-4 text-white text-[18px]">Photography</h2>
+            <img src="img/content3.svg" alt="" />
+            <div class="absolute flex gap-2 text-white top-[180px] right-16 pl-64 text-[13px] items-center"><img src="img/play.svg" alt="" />20 video</div>
+          </div>
+        </div>
+        <div class="bg-[#FF994F] items-center text-center w-[180px] mx-auto py-4 px-8 text-[15px] rounded-full text-white max-lg:text-xs max-lg:w-[130px]  ">
+          <a href="">See Course</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Mentor -->
+    <section class="max-w-[1240px] mx-auto py-10">
+      <div class="container mx-auto pl-20 font-inter max-lg:pl-0">
+        <div class="flex items-center justify-between max-lg:grid gap-6 ">
+          <div class="w-[800px] max-lg:w-[300px] mx-auto">
+            <img src="img/bapak.svg" alt="" />
+          </div>
+          <div class="px-28 max-lg:px-10">
+            <h1 class="text-[#151F3C] font-bold text-[40px] w-[370px] max-lg:text-2xl max-lg:text-center ">Mentors who are professional in their fields</h1>
+            <p class="text-[#969696] text-[15px] max-lg:py-4 max-lg:text-sm max-lg:text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum massa sit amet porta efficitur.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- conten grafik -->
+    <section class="py-28 max-w-[1300px] mx-auto ">
+      <div class="container mx-auto font-inter items-center ">
+        <div class="flex justify-between items-center mx-auto gap-4">
+          <div class="px-10 ">
+            <h2 class="w-[500px] font-bold text-[40px] text-[#151F3C] max-lg:text-2xl max-lg:w-[400px]">We will provide the best for our users from year to year</h2>
+            <p class="text-[#969696] text-[14px] py-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum massa sit amet porta efficitur.</p>
+            <div class="grid grid-cols-2 w-[300px] gap-4 py-4">
+              <div class="flex gap-2"><img src="img/ceklis.svg" alt="" />World-class</div>
+              <div class="flex gap-2"><img src="img/ceklis.svg" alt="" />Flexible</div>
+              <div class="flex gap-2"><img src="img/ceklis.svg" alt="" />Affordable</div>
+              <div class="flex gap-2"><img src="img/ceklis.svg" alt="" />Job-relevan</div>
+            </div>
+            <div class="btn-regis py-3 px-6 rounded-full text-[#fff] w-[150px] text-center mt-4 max-lg:w-[130px] max-lg:py-2">
+              <button class="text-[14px] max-lg:text-xs">Register Now</button>
+            </div>
+          </div>
+          <div class="pl-20 max-lg:hidden">
+            <img src="img/grafik.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  -->
+    <section class="bg-[#FFFAF2] py-20 my-10">
+      <div class="container mx-auto font-[inter] w-[1300px] px-10">
+        <div class="flex justify-between items-center">
+          <div class="w-[400px] max-lg:w-[200px]">
+            <h1 class="font-bold text-[40px] text-[#151F3C] max-lg:text-xl">
+              Trusted <br />
+              by 20,000+ People
+            </h1>
+            <p class="text-[#969696] text-[14px] max-lg:text-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum massa sit amet porta efficitur.</p>
+          </div>
+          <div class="relative h-52 w-52">
+            <div class="absolute inset-y-20 left-10 w-[350px] max-lg:w-[150px] max-lg:-left-[300px]"><img src="img/12.svg" alt="" /></div>
+          </div>
+          <div class="relative h-52 w-52">
+            <div class="absolute -inset-y-10 right-0 w-[350px] max-lg:w-[150px] max-lg:-left-[720px] max-lg:inset-y-8"><img src="img/11.svg" alt="" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Develop Your Quality -->
+    <section>
+      <div class="container mx-auto py-20 px-10 max-w-[1300px]">
+        <div class="bg-header rounded-3xl py-24 max-lg:py-12">
+          <div class="mx-20 w-[450px]">
+            <h1 class="text-[#151F3C] font-bold text-[40px] max-lg:text-2xl">Develop Your Quality</h1>
+            <p class="text-[14px] text-[#969696] py-6 max-lg:text-sm max-lg:w-[250px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum massa sit amet porta efficitur.</p>
+            <div class="btn-regis py-3 px-6 rounded-full text-[#fff] w-[150px] text-center mt-4 max-lg:w-[120px] max-lg:py-2 max-lg:px-4">
+              <button class="text-[14px] font-semibold max-lg:text-xs">Get Started</button>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute -top-[400px] right-0 z-20 w-[500px] max-lg:hidden"><img src="img/cewe.svg" alt="" /></div>
+          <div class="absolute right-[70px] -top-[380px] w-[130px] max-lg:hidden"><img src="img/vektor1.svg" alt="" /></div>
+          <div class="absolute right-[320px] -top-[180px] w-[130px] max-lg:hidden"><img src="img/vektor1.svg" alt="" /></div>
+          <div class="absolute left-0 -top-[405px] max-lg:w-[150px] max-lg:-top-[293px]"><img src="img/Rectangle1.svg" alt="" /></div>
+          <div class="absolute left-0 -top-[405px] max-lg:w-[200px] max-lg:-top-[293px]"><img src="img/Rectangle2.svg" alt="" /></div>
+          <div class="absolute left-14 -top-[405px] max-lg:w-[200px] max-lg:-top-[293px]"><img src="img/Rectangle3.svg" alt="" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#281900]">
+      <section>
+        <div class="container mx-auto py-28 font-inter max-w-[1300px]">
+          <div class="relative">
+            <div class="absolute -top-14 left-10"><img src="img/logo2.svg" alt="" /></div>
+          </div>
+          <div class="flex max-lg:grid max-lg:grid-cols-2 max-lg:gap-4">
+            <div class="w-[450px] px-10 max-lg:w-[250px]">
+              <p class="text-white text-[14px] font-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum massa sit amet porta efficitur.</p>
+              <div class="flex gap-4 py-6">
+                <div class=""><img src="img/Group 85.svg" alt="" /></div>
+                <div class=""><img src="img/Group 86.svg" alt="" /></div>
+                <div class=""><img src="img/Group 87.svg" alt="" /></div>
+                <div class=""><img src="img/Group 88.svg" alt="" /></div>
+              </div>
+            </div>
+
+            <div class="text-white text-[14px] px-10">
+              <h3 class="font-bold pb-6">Home</h3>
+              <ul class="font-light">
+                <li class="pb-4"><a href="">Class</a></li>
+                <li class="pb-4"><a href="">Course</a></li>
+                <li class="pb-4"><a href="">About</a></li>
+                <li class="pb-4"><a href="">Mentor</a></li>
+              </ul>
+            </div>
+
+            <div class="text-white text-[14px] px-10">
+              <h3 class="font-bold pb-6">Our company</h3>
+              <ul class="font-light">
+                <li class="pb-4"><a href="">Class Comunity</a></li>
+                <li class="pb-4"><a href="">Course company</a></li>
+                <li class="pb-4"><a href="">Company name</a></li>
+                <li class="pb-4"><a href="">mens course</a></li>
+                <li class="pb-4"><a href="">Courses.com</a></li>
+              </ul>
+            </div>
+
+            <div class="text-white text-[14px] px-10">
+              <h3 class="font-bold pb-6">Class</h3>
+              <ul class="font-light">
+                <li class="pb-4"><a href="">Potography</a></li>
+                <li class="pb-4"><a href="">HTML & CSS</a></li>
+                <li class="pb-4"><a href="">JavaScript</a></li>
+                <li class="pb-4"><a href="">Java</a></li>
+                <li class="pb-4"><a href="">PHP</a></li>
+                <li class="pb-4"><a href="">UI/UX Design</a></li>
+                <li class="pb-4"><a href="">Web Design</a></li>
+                <li class="pb-4"><a href="">Design Grafis</a></li>
+              </ul>
+            </div>
+
+            <div class="text-white text-[14px] px-10">
+              <h3 class="font-bold">About</h3>
+              <p class="font-light py-6">You can contact Us to send email to us</p>
+              <div class="relative">
+                <input type="text" placeholder="Your Email" class="rounded-full text-black text-[14px]" />
+                <div class="absolute top-2 right-6 max-lg:-right-20"><img src="img/20.svg" alt="" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
